@@ -15,7 +15,11 @@ function App() {
 
   return (
     <>
-      <Header cart={cart} />
+      <Header
+        cart={cart}
+        decreaseQuantity={decreaseQuantity}
+        increaseQuantity={increaseQuantity}
+      />
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Coleccion</h2>
         <div className="row mt-5">
