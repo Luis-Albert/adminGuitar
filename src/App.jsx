@@ -6,10 +6,15 @@ import Guitar from "./components/Guitar";
 function App() {
 
   const [data, setData] = useState(db)
+  const [cart, setCart] = useState([])
+
+  function addToCart(item) {
+    setCart([...cart, item])
+  }
 
   return (
     <>
-      <Header />
+      <Header cart={cart} />
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Coleccion</h2>
         <div className="row mt-5">
@@ -17,6 +22,7 @@ function App() {
             <Guitar
               key={guitar.id}
               guitar={guitar}
+              addToCart={addToCart}
             />
           ))}
         </div>
