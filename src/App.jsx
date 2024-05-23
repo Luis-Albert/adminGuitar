@@ -9,6 +9,7 @@ function App() {
   const [cart, setCart] = useState([])
 
   function addToCart(item) {
+    item.quantity = 1
     setCart([...cart, item])
   }
 
