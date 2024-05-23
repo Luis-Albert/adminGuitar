@@ -46,6 +46,11 @@ function Header({ cart }) {
                             <td className="fw-bold">
                               {guitar.price}
                             </td>
+                            <td className="flex align-items-start gap-4">
+                              <button className="btn btn-dark" type="button">+</button>
+                              {guitar.quantity}
+                              <button className="btn btn-dark" type="button">-</button>
+                            </td>
                           </tr>
                         ))}
                       </tbody>
