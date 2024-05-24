@@ -1,6 +1,6 @@
 import { useMemo } from "react"
 
-function Header({ cart, decreaseQuantity, increaseQuantity, removeFromCart }) {
+function Header({ cart, decreaseQuantity, increaseQuantity, removeFromCart, clearCart }) {
 
   const isEmpty = useMemo(() => cart.length === 0, [cart])
   const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
@@ -61,7 +61,7 @@ function Header({ cart, decreaseQuantity, increaseQuantity, removeFromCart }) {
                     <p className="text-end">Total a pagar: <span className="fw-bold">${cartTotal}</span> </p>
                   </>
                 )}
-                <button className="btn btn-dark w-100 mt-3 p-2">
+                <button className="btn btn-dark w-100 mt-3 p-2" onClick={clearCart}>
                   Vaciar carrito
                 </button>
               </div>

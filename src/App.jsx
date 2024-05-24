@@ -46,6 +46,9 @@ function App() {
     setCart(prevCart => prevCart.filter(guitar => guitar.id !== id))
   }
 
+  function clearCart(e) {
+    setCart([])
+  }
 
   return (
     <>
@@ -54,6 +57,7 @@ function App() {
         decreaseQuantity={decreaseQuantity}
         increaseQuantity={increaseQuantity}
         removeFromCart={removeFromCart}
+        clearCart={clearCart}
       />
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Coleccion</h2>
