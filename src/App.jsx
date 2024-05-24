@@ -12,8 +12,18 @@ function App() {
   const MIN_ITEMS = 1
 
   function addToCart(item) {
-    item.quantity = 1
-    setCart([...cart, item])
+
+    const itemsExist = cart.findIndex(guitar => guitar.id === item.id)
+    if (itemsExist >= 0) {
+      if (cart[itemsExist].quantity >= MAX_ITEMS) return
+      const updatedCart = [...cart]
+      updatedCart[itemsExist].quantity++
+      setCart(updatedCart)
+    } else {
+      item.quantity = 1
+      setCart([...cart, item])
+    }
+
   }
 
   function decreaseQuantity(id) {
