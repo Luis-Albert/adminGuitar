@@ -64,7 +64,7 @@ export const useCart = () => {
     setCart(prevCart => prevCart.filter(guitar => guitar.id !== id))
   }
 
-  function clearCart(e) {
+  function clearCart() {
     setCart([])
   }
 
